@@ -9,8 +9,7 @@ var EN={
  "Почетна": "Home",
  "Услуги": "Services",
  "Надградба": "Extensions",
- "Трансформации": "Hair Transformations",
- "За нас": "About",
+ "Трансформации": "Transformations",
  "Обуки": "Training",
  "Контакт": "Contact",
  "Побарајте термин": "Book an appointment",
@@ -54,9 +53,7 @@ var EN={
  "Повеќе": "More",
  "Реални": "Real",
  "резултати": "results",
- "Резултат по третман на коса — потоа": "Hair after treatment",
  "Коса пред третман": "Hair before treatment",
- "Резултат по третман на коса — потоа, втор пример": "Hair after treatment, second example",
  "Коса пред третман, втор пример": "Hair before treatment, second example",
  "Потоа": "After",
  "Пред": "Before",
@@ -89,14 +86,30 @@ var EN={
  "Адреса": "Address",
  "Работно време": "Opening hours",
  "Људовит Гај бр. 8, Скопје": "Ljudovit Gaj 8, Skopje",
- "Понеделник, среда, петок и сабота": "Monday, Wednesday, Friday and Saturday",
- "Вторник и четврток": "Tuesday and Thursday",
  "Недела": "Sunday",
  "неработен ден": "closed",
  "Отвори во Google Maps": "Open in Google Maps",
  "Локација на салонот": "Salon location",
- "© 2026 The House of Beauty by Kristina Nikolovska — сите права задржани.": "© 2026 The House of Beauty by Kristina Nikolovska — all rights reserved.",
- "5 starс": "5 stars",
+ "Резултат по третман на коса, потоа": "Hair after treatment",
+ "Резултат по третман на коса, потоа, втор пример": "Hair after treatment, second example",
+ "4,8": "4.8",
+ "· 40 рецензии на Google": "· 40 reviews on Google",
+ "5 од 5 ѕвезди": "5 out of 5 stars",
+ "Видео: Нано кератин надградба": "Video: Nano keratin extensions",
+ "Видео: Одржување": "Video: Maintenance",
+ "Видео: Корекција": "Video: Correction",
+ "Понеделник": "Monday",
+ "Вторник": "Tuesday",
+ "Среда": "Wednesday",
+ "Четврток": "Thursday",
+ "Петок": "Friday",
+ "Сабота": "Saturday",
+ "денес": "today",
+ "Људовит Гај бр. 8": "Ljudovit Gaj 8",
+ "Прикажи мапа": "Show map",
+ "Мапата ја прикажува Google и поставува колачиња.": "The map is provided by Google and sets cookies.",
+ "© 2026 The House of Beauty by Kristina Nikolovska. Сите права задржани.": "© 2026 The House of Beauty by Kristina Nikolovska. All rights reserved.",
+ "Политика за приватност": "Privacy policy",
  "Осветлување, пример 1": "Lightening, example 1",
  "Осветлување, пример 2": "Lightening, example 2",
  "Осветлување, пример 3": "Lightening, example 3",
@@ -113,14 +126,14 @@ var EN={
 var META={
 title:'Hair Salon Skopje | The House of Beauty by Kristina Nikolovska',
 desc:'Hair care salon in Skopje, Ljudovit Gaj 8. Kristina Nikolovska, colourist and Wella Freelance Educator. Book an appointment: +389 78 333 288.'};
-var ATTRS=['alt','aria-label','title'];
+var ATTRS=['alt','aria-label','title','data-today'];
 var store=new WeakMap(),metaStore=[];
 function norm(s){return s.replace(/\s+/g,' ').trim()}
 function walk(root,fn){var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:function(n){var p=n.parentNode;if(!p||/^(SCRIPT|STYLE|NOSCRIPT)$/.test(p.nodeName)||p.closest('.lang-sw'))return NodeFilter.FILTER_REJECT;return n.nodeValue.trim()?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT}}),n;while((n=w.nextNode()))fn(n)}
 function tr(orig,lang){if(lang==='mk')return orig;var k=norm(orig),v=EN[k];if(v===undefined)return orig;var m=orig.match(/^(\s*)[\s\S]*?(\s*)$/);return m[1]+v+m[2]}
 function apply(lang){
 walk(document.body,function(n){if(!store.has(n))store.set(n,n.nodeValue);var o=store.get(n);var t=tr(o,lang);if(n.nodeValue!==t)n.nodeValue=t});
-document.body.querySelectorAll('[alt],[aria-label],[title]').forEach(function(el){
+document.body.querySelectorAll('[alt],[aria-label],[title],[data-today]').forEach(function(el){
 if(el.closest('.lang-sw'))return;
 ATTRS.forEach(function(a){if(!el.hasAttribute(a))return;var key='__o_'+a;if(el[key]===undefined)el[key]=el.getAttribute(a);var t=tr(el[key],lang);if(el.getAttribute(a)!==t)el.setAttribute(a,t)})});
 var sets=[['meta[name="description"]',META.desc],['meta[property="og:description"]',META.desc],['meta[name="twitter:description"]',META.desc],['meta[property="og:title"]',META.title],['meta[name="twitter:title"]',META.title]];

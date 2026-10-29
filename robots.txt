@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://YOUR-DOMAIN.mk/sitemap.xml
+Sitemap: https://iskrajodesign.github.io/thehouseofbeauty.by.kn.2026/sitemap.xml
